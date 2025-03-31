@@ -29,15 +29,12 @@ class CustomersPage {
     async editCustomer(editedName) {
         await this.customerSelect.click();
         await this.editBtn.click();
-        await this.firstName.waitForDisplayed({ timeout: 5000 });
         const firstNameField = await this.firstName;
         await (firstNameField).click();
-        await this.firstName.waitForDisplayed({ timeout: 5000 });
         await browser.execute('mobile: doubleTap', {
             element: await firstNameField.elementId
         });
         await (firstNameField).clearValue();
-        await this.firstName.waitForDisplayed({ timeout: 5000 });
         console.log("Trying to edit the first Name");
         await (firstNameField).setValue(editedName);
         await this.saveBtn.click();
