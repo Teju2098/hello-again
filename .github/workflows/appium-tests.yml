@@ -1,0 +1,32 @@
+name: Appium Test
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  appium-tests:
+    runs-on: ubuntu-latest
+    env:
+      PLATFORM_NAME: ${{ secrets.PLATFORM_NAME }}
+      DEVICE_NAME: ${{ secrets.DEVICE_NAME }}
+      UDID: ${{ secrets.UDID }}
+      PLATFORM_VERSION: ${{ secrets.PLATFORM_VERSION }}
+      AUTOMATION_NAME: ${{ secrets.AUTOMATION_NAME }}
+      BUNDLE_ID: ${{ secrets.BUNDLE_ID }}
+      WDA_LOCAL_PORT: ${{ secrets.WDA_LOCAL_PORT }}
+      NO_RESET: ${{ secrets.NO_RESET }}
+      COMMAND_TIMEOUT: ${{ secrets.COMMAND_TIMEOUT }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
