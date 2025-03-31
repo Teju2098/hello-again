@@ -24,7 +24,7 @@ exports.config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './test/specs/**/*.js'
+        './tests/specs/**/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -62,11 +62,11 @@ exports.config = {
     // }],
     capabilities: [{
         platformName: 'iOS',
-        'appium:deviceName': 'iPhone 14 Pro Max', //from xcode
-        'appium:udid': '00008120-000A45381A6BC01E', // from xcode
-        'appium:platformVersion': '17.6.1', //form xcode
+        'appium:deviceName': 'iPhone 14 Pro Max',
+        'appium:udid': '00008120-000A45381A6BC01E',
+        'appium:platformVersion': '17.6.1',
         'appium:automationName': 'XCUITest',
-        'appium:bundleId': 'at.helloagain.hellomemberclub', //ideviceinstaller -l
+        'appium:bundleId': 'at.helloagain.hellomemberclub',
         'appium:wdaLocalPort': 8100,
         'appium:noReset': true,
         'appium:newCommandTimeout': 4600,
