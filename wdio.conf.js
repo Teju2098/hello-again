@@ -63,7 +63,7 @@ exports.config = {
     capabilities: [{
         platformName: 'iOS',
         'appium:deviceName': 'iPhone 14 Pro Max',
-        'appium:udid': '00008120-000A45381A6BC01E',
+        'appium:udid': process.env.UDID,
         'appium:platformVersion': '17.6.1',
         'appium:automationName': 'XCUITest',
         'appium:bundleId': 'at.helloagain.hellomemberclub',
